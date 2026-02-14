@@ -40,32 +40,33 @@ The following six classification models were implemented:
 
 ------------------------------------------------------------------------
 
-## Model Comparison Table
-
-## 📊 Model Performance Comparison
+## Model Performance Comparison
 
 | ML Model Name              | Accuracy |   AUC  | Precision | Recall | F1 Score |  MCC   |
 |----------------------------|----------|--------|-----------|--------|----------|--------|
 | Logistic Regression        | 0.2787   | 0.6345 | 0.3577    | 0.2787 | 0.1912   | 0.1889 |
-| Decision Tree              | 0.3661   | 0.5611 | 0.2505    | 0.3661 | 0.2616   | 0.2264 |
+| Decision Tree              | 0.4216   | 0.5927 | 0.2805    | 0.4216 | 0.3215   | 0.2933 |
 | KNN                        | 0.5439   | 0.7589 | 0.4281    | 0.5439 | 0.4554   | 0.5082 |
 | Naive Bayes                | 0.3610   | 0.5684 | 0.1542    | 0.3610 | 0.2161   | 0.2239 |
-| Random Forest (Ensemble)   | 0.2666   | 0.7289 | 0.2173    | 0.2666 | 0.1201   | 0.0685 |
-| XGBoost (Ensemble)         | 0.3492   | 0.7935 | 0.3113    | 0.3492 | 0.2475   | 0.2477 |
+| Random Forest (Ensemble)   | 0.3639   | 0.8053 | 0.2120    | 0.3639 | 0.2361   | 0.2836 |
+| XGBoost (Ensemble)         | 0.3621   | 0.7539 | 0.2467    | 0.3621 | 0.2426   | 0.2268 |
 
 
 ------------------------------------------------------------------------
-
-## Observations on Model Performance
-
- ## 📌 Model Observations
+## Model Observations
 
 | ML Model Name            | Observation about Model Performance |
 |--------------------------|--------------------------------------|
-| Logistic Regression      | Performs poorly due to non-linear class boundaries in the dataset. |
-| Decision Tree            | Better than Logistic Regression but may suffer from overfitting. |
-| kNN                      | Achieved the highest Accuracy and MCC. Performs well due to similarity-based classification. |
-| Naive Bayes              | Lower precision and F1 score due to strong independence assumption between features. |
-| Random Forest (Ensemble) | Moderate AUC but relatively lower classification accuracy in this configuration. |
-| XGBoost (Ensemble)       | Achieved the highest AUC score, indicating strong probabilistic ranking capability. |
+| Logistic Regression      | Performs poorly due to non-linear decision boundaries in the dataset, resulting in low overall accuracy and F1 score. |
+| Decision Tree            | Shows improved performance compared to Logistic Regression with better F1 and MCC, but may still be prone to overfitting. |
+| kNN                      | Achieved the highest Accuracy, F1 Score, and MCC among all models, indicating strong similarity-based classification performance. |
+| Naive Bayes              | Lower precision and F1 score due to the strong independence assumption between features. |
+| Random Forest (Ensemble) | Achieved the highest AUC score (0.8053), showing strong probabilistic ranking capability despite moderate accuracy. |
+| XGBoost (Ensemble)       | Provides balanced performance with good AUC and stable classification results across classes. |
 
+
+### Best Performing Model
+
+Based on overall evaluation metrics, **KNN** is the best-performing model, achieving the highest Accuracy (0.5439), F1 Score (0.4554), and MCC (0.5082).
+
+However, **Random Forest** achieved the highest AUC (0.8053), indicating strong class probability ranking capability.
