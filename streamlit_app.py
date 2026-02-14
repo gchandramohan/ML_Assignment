@@ -83,7 +83,7 @@ model_options = [
     "KNN",
     "Naive Bayes",
     "Random Forest",
-    "Gradient Boosting"
+    "XGBoost"
 ]
 
 selected_model = st.sidebar.selectbox(
@@ -92,7 +92,7 @@ selected_model = st.sidebar.selectbox(
 )
 
 st.sidebar.markdown("---")
-st.sidebar.markdown("📥 **Download Sample Test CSV**")
+st.sidebar.markdown("**Download Sample Test CSV**")
 github_test_link = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/test_data/dry_bean_test.csv"
 st.sidebar.markdown(f"[Click here to download]({github_test_link})")
 
@@ -100,16 +100,16 @@ st.sidebar.markdown(f"[Click here to download]({github_test_link})")
 # Load Models
 # -------------------------------------------------
 models = {
-    "Logistic Regression": pickle.load(open("models/logistic.pkl", "rb")),
-    "Decision Tree": pickle.load(open("models/decision_tree.pkl", "rb")),
-    "KNN": pickle.load(open("models/knn.pkl", "rb")),
-    "Naive Bayes": pickle.load(open("models/naive_bayes.pkl", "rb")),
-    "Random Forest": pickle.load(open("models/random_forest.pkl", "rb")),
-    "Gradient Boosting": pickle.load(open("models/gradient_boost.pkl", "rb")),
+    "Logistic Regression": pickle.load(open("model/logistic.pkl", "rb")),
+    "Decision Tree": pickle.load(open("model/decision_tree.pkl", "rb")),
+    "KNN": pickle.load(open("model/knn.pkl", "rb")),
+    "Naive Bayes": pickle.load(open("model/naive_bayes.pkl", "rb")),
+    "Random Forest": pickle.load(open("model/random_forest.pkl", "rb")),
+    "XGBoost": pickle.load(open("model/xgboost.pkl", "rb")),
 }
 
-scaler = pickle.load(open("models/scaler.pkl", "rb"))
-label_encoder = pickle.load(open("models/label_encoder.pkl", "rb"))
+scaler = pickle.load(open("model/scaler.pkl", "rb"))
+label_encoder = pickle.load(open("model/label_encoder.pkl", "rb"))
 
 # -------------------------------------------------
 # Main Content
@@ -143,7 +143,7 @@ if uploaded_file is not None:
     # -------------------------------------------------
     # Evaluation Metrics Section
     # -------------------------------------------------
-    st.markdown("<div class='section-header'>📊 Evaluation Metrics</div>", unsafe_allow_html=True)
+    st.markdown("<div class='section-header'>Evaluation Metrics</div>", unsafe_allow_html=True)
     st.markdown(" ")
 
     acc = accuracy_score(y_true, y_pred)
@@ -182,7 +182,7 @@ if uploaded_file is not None:
     # Confusion Matrix Section
     # -------------------------------------------------
     st.markdown(" ")
-    st.markdown("<div class='section-header'>📌 Confusion Matrix</div>", unsafe_allow_html=True)
+    st.markdown("<div class='section-header'>Confusion Matrix</div>", unsafe_allow_html=True)
     st.markdown(" ")
 
     cm = confusion_matrix(y_true, y_pred)
@@ -206,4 +206,4 @@ if uploaded_file is not None:
     st.pyplot(fig)
 
 else:
-    st.info("⬅ Please upload a test CSV file from the sidebar to begin.")
+    st.info("Please upload a test CSV file from the sidebar to begin.")
