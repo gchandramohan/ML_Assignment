@@ -4,6 +4,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 import numpy as np
+import requests
 
 from sklearn.metrics import (
     accuracy_score,
