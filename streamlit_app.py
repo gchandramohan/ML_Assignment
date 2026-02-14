@@ -96,6 +96,15 @@ st.sidebar.markdown("**Download Sample Test CSV**")
 github_test_link = "https://raw.githubusercontent.com/gchandramohan/ML_Assignment/main/test_data/dry_bean_test.csv"
 st.sidebar.markdown(f"[Click here to download]({github_test_link})")
 
+response = requests.get(github_test_link)
+
+st.sidebar.download_button(
+    label="⬇️ Download Sample Test CSV",
+    data=response.content,
+    file_name="dry_bean_test.csv",
+    mime="text/csv"
+)
+
 # -------------------------------------------------
 # Load Models
 # -------------------------------------------------
