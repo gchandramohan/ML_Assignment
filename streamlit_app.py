@@ -93,7 +93,7 @@ selected_model = st.sidebar.selectbox(
 
 st.sidebar.markdown("---")
 st.sidebar.markdown("**Download Sample Test CSV**")
-github_test_link = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/test_data/dry_bean_test.csv"
+github_test_link = "https://github.com/gchandramohan/ML_Assignment/blob/main/test_data/dry_bean_test.csv"
 st.sidebar.markdown(f"[Click here to download]({github_test_link})")
 
 # -------------------------------------------------
